@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             pageLoadOverlay.classList.add('active');
         }, 0);
 
+        // Remover a animação após 2.5 segundos
         
     }
 
