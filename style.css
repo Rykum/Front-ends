@@ -328,8 +328,6 @@ form input[type="submit"]:hover {
         box-shadow: 0 0 50px 100px rgba(0, 0, 0, 0);
     }
 }
-
-/* Estilos para a animação de carregamento da página */
 .page-load-overlay {
     position: fixed;
     top: 0;
@@ -345,7 +343,5 @@ form input[type="submit"]:hover {
 
 .page-load-overlay.active {
     opacity: 0;
-    transition: opacity 0.2 ease-in-out;
+    transition: opacity 2.5 ease-in-out;
 }
-
-
