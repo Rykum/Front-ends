@@ -6,7 +6,7 @@
     font-style: normal;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 300px) {
     #meu-layout {
       display: grid; /* Layout em grid para telas maiores */
     }
