@@ -6,6 +6,15 @@
     font-style: normal;
 }
 
+@media (min-width: 768px) {
+    #meu-layout {
+      display: grid; /* Layout em grid para telas maiores */
+    }
+    #minha-imagem {
+      width: 50%; /* Imagem ocupa metade da tela */
+    }
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -17,12 +26,11 @@ body {
     background-color: #0f1923;
     color: #ffffff;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
 header {
     max-height: 90px;
-    background-color: #ff4655;
+    background-color: red;
     color: white;
     text-align: center;
     padding-top: 20px;
@@ -42,6 +50,14 @@ header {
     height: auto;
 }
 
+.logo img:hover{
+color: blueviolet;
+box-shadow: 4px 4px 2px black;
+border: 2px solid rgb(16, 16, 97);
+border-radius: 51%;
+transition: 0.6s;
+
+}
 .h1-container {
     display: inline-block;
     position: relative;
@@ -133,7 +149,7 @@ nav {
     border: 0px solid red;
     display: inline-block;
     position: absolute;
-    top: 452px;
+    top: 547px;
     transform: translateY(-896%);
     right: 0px;
     background-color: red;
@@ -176,10 +192,160 @@ main article {
 
 main article h1 {
     font-family: 'valoras', Helvetica, sans-serif;
-    color: #ff4655;
+    color:blueviolet;
 }
 
 main article p {
     font-size: 18px;
     line-height: 1.6;
-    color: #0f1923;}
+    color: #0f1923;
+}
+
+main article form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'valoras', Helvetica, sans-serif;
+    color: #ff4655;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+form input[type="submit"] {
+    background-color: #ff4655;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.5s, transform 0.5s;
+}
+
+form input[type="submit"]:hover {
+    background-color: blueviolet;
+    transform: scale(1.05);
+}
+
+.background-image {
+    width: min(1190px);
+    background-image: url('capuda.jpg');
+    background-size: 100%;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    margin-bottom: -238px;
+}
+
+.animacao {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.animacao.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#minhaimagem {
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.duplicate-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+}
+
+.duplicate-image.red {
+    filter: hue-rotate(0deg);
+}
+
+.duplicate-image.blue {
+    filter: hue-rotate(120deg);
+}
+
+.duplicate-image.green {
+    filter: hue-rotate(240deg);
+}
+
+.shadow-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 1;
+    z-index: 900;
+    pointer-events: none;
+    animation: shadowFadeOut 5s ease-in-out forwards;
+}
+
+@keyframes shadowFadeOut {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.9);
+    }
+    100% {
+        opacity: 0;
+        box-shadow: 0 0 50px 100px rgba(0, 0, 0, 0);
+    }
+}
+
+/* Estilos para a animação de carregamento da página */
+.page-load-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 1;
+    z-index: 1000;
+    pointer-events: none;
+    transition: opacity 1s ease-in-out;
+}
+
+.page-load-overlay.active {
+    opacity: 0;
+    transition: opacity 0.2 ease-in-out;
+}
+
+
