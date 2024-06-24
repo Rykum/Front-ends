@@ -49,6 +49,14 @@ header {
     height: auto;
 }
 
+.logo img:hover{
+    color: blueviolet;
+    box-shadow: 4px 4px 2px black;
+    border: 2px solid rgb(16, 16, 97);
+    border-radius: 51%;
+    transition: 0.6s;
+}
+
 .h1-container {
     display: inline-block;
     position: relative;
@@ -172,12 +180,14 @@ main {
 }
 
 main article {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.61);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     max-width: 800px;
-    margin: 0 auto;
+    margin-top: -600px;
+    margin-left: auto;
+    margin-right: auto;
     color: #0f1923;
 }
 
@@ -203,6 +213,7 @@ main article form {
     max-width: 800px;
     margin: 20px auto;
     text-align: left;
+    
 }
 
 form label {
@@ -336,4 +347,3 @@ form input[type="submit"]:hover {
     opacity: 0;
     transition: opacity 2.5 ease-in-out;
 }
-
