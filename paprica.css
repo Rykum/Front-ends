@@ -6,14 +6,67 @@
     font-style: normal;
 }
 
-@media (min-width: 768px) {
-    #meu-layout {
-      display: grid; /* Layout em grid para telas maiores */
+@media screen and (max-width: 1020px) {
+    .flex {
+     flex-direction: column;
     }
-    #minha-imagem {
-      width: 50%; /* Imagem ocupa metade da tela */
-    }
-  }
+ 
+   #meu-layout {
+     display: grid; /* Layout em grid para telas maiores */
+   }
+   #minha-imagem {
+     width: 50%; /* Imagem ocupa metade da tela */
+   }
+ 
+   header > p {
+     padding: 2px 4px;
+     margin-left: 0px;
+     font-size: 10px;
+     margin-right: -4px;
+ }
+ 
+ .logo {
+     position: absolute;
+     margin-top: 10px;
+     margin-left: -22px;
+     
+ }
+ 
+ main {
+     text-align: justify;
+     padding: 10px;
+     margin-top: -1148px;
+ }
+ 
+ .project-section {
+     display:table-column-group;
+     justify-content:space-around;
+     align-items: center;
+     padding: 20px;
+     margin-top: 50px;
+     
+     
+ }
+ 
+ nav {
+    font-weight: bolder;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    border: 0px solid #ff4655;
+    display: inline-block;
+    position: absolute;
+    top: auto;
+    transform: translateY(-896%);
+    background-color: #ff4655;
+    padding: 10px;
+    border-bottom-left-radius: 40px;
+    box-sizing:border-box;
+}
+
+ }
 * {
     margin: 0;
     padding: 0;
