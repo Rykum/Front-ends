@@ -108,5 +108,5 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     window.addEventListener('scroll', runAnimation);
-    runAnimation(); // Run on load to check if elements are already in view
+    runAnimation(); // Executa na carga para verificar se os elementos já estão na vista
 });
