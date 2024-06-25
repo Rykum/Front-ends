@@ -69,3 +69,44 @@ document.addEventListener('DOMContentLoaded', function() {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.image-box');
+    const background2 = document.querySelector('.background-image-2');
+
+    const isElementInViewport = (el) => {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    };
+
+    const runAnimation = () => {
+        images.forEach((image) => {
+            if (isElementInViewport(image)) {
+                if (image.id === 'image1') {
+                    image.classList.add('fade-in-right');
+                } else if (image.id === 'image2') {
+                    image.classList.add('fade-in-left');
+                } else if (image.id === 'image3') {
+                    image.classList.add('fade-in-right');
+                } else if (image.id === 'image4') {
+                    image.classList.add('fade-in-left');
+                }
+            }
+        });
+
+        // Verifica se a segunda imagem de fundo está na viewport
+        if (window.scrollY > window.innerHeight) {
+            background2.classList.add('visible');
+        } else {
+            background2.classList.remove('visible');
+        }
+    };
+
+    window.addEventListener('scroll', runAnimation);
+    runAnimation(); // Run on load to check if elements are already in view
+});

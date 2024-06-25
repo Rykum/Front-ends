@@ -32,26 +32,24 @@ main {
 }
 
 .project-section {
-    display:table-column-group;
-    justify-content:space-around;
-    align-items: center;
-    padding: 20px;
-    margin-top: 50px;
-    
-    
+    flex-direction: column;
 }
 
-main article form {
-    display: table-column;
+.project-section.reverse {
     flex-direction: column;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 0px 0px;
-    text-align: center;
+}
+
+.text-box, .image-box {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.text-box {
+    margin-bottom: 0;
+}
+
+.image-box img {
+    width: 100%;
 }
 }
 
@@ -388,100 +386,104 @@ form input[type="submit"]:hover {
 }
 
 
+/* Animações de FadeIn */
+/* Animações de FadeIn */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.6s ease-in-out forwards;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 0.6s ease-in-out forwards;
+}
+
+/* Estilos Gerais */
 .project-section {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
     margin-top: 50px;
-    
-    
+    position: relative;
 }
 
 .project-section.reverse {
     flex-direction: row-reverse;
 }
 
+.image-container {
+    width: 48%; /* Ajuste a largura para aproximar o texto */
+    position: relative;
+}
+
 .text-box {
-    width: 54%;
+    width: 48%; /* Ajuste a largura para aproximar o texto */
     color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    
+    margin-right: 2%; /* Adicione margem entre texto e imagem */
 }
 
 .text-box.transparent-bg {
     background-color: rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1.2s ease-in-out;
-}
-
-.text-box2 {
-    width: 54%;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.text-box2.transparent-bg {
-    background-color: rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1.2s ease-in-out;
 }
 
 .image-box {
-    width: 45%;
-    animation: fadeIn 1.2s ease-in-out;
-    margin-left: 10px;
-   
+    width: 100%;
+    position: relative;
+    opacity: 0; /* Start hidden */
 }
 
 .image-box img {
-    width: 44%;
+    width: 70%;
     border-radius: 30px;
     box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.image-box2 {
-    width: 45%;
-    animation: fadeIn 2.5s ease-out;
-    transition: 1s;
-    margin-left: 100px;
-}
-
-.image-box2 img {
-    width: 44%;
-    border-radius: 30px;
-    box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.5);
-    
-
-}
-
-
+/* Cabeçalho */
 h1, h2 {
     color: #ff4655;
 }
 
+/* Fundo Transparente */
 .transparent-bg {
     background: rgba(0, 0, 0, 0.7);
 }
-
-.transparent-bg {
-    background: rgba(0, 0, 0, 0.7);
+.background-image-2 {
+    position: fixed;
+    top: 100vh; /* Começa fora da tela, logo abaixo da primeira imagem */
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('back2.jpeg') no-repeat center center/cover; 
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: -1;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* Animação de desvanecimento para a segunda imagem de fundo */
+.background-image-2.visible {
+    opacity: 1;
 }
-.fade-in {
-    animation: fadeIn 2s ease-in-out;
-}
-
-
-
-
