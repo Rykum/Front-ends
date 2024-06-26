@@ -49,12 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
         pageLoadOverlay.classList.add('page-load-overlay');
         document.body.appendChild(pageLoadOverlay);
 
-        // Iniciar a animação imediatamente
-        setTimeout(() => {
-            pageLoadOverlay.classList.add('active');
-        }, 0);
-
-        
+        // Remover a sobreposição após o carregamento da página
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                pageLoadOverlay.remove();
+            }, 500); // Tempo extra para garantir que a página carregou
+        });
     }
 
     // Adiciona evento de clique na imagem do logo para iniciar a animação
@@ -68,9 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function randomIntFromInterval(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
-});
 
-document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('.image-box');
     const background2 = document.querySelector('.background-image-2');
 
